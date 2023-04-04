@@ -37,15 +37,20 @@ const Home = () => {
         title="Solar Panels"
         description="Lower Cost Solar Panels in America"
         backgroundImg="solar-panel.jpg"
-        leftBtnText="Oreder Now"
+        leftBtnText="Order Now"
         rightBtnText="Learn More"
       />
       <Section
         title="Solar Roof"
         description="Produce Clean Energy From Your Roof"
         backgroundImg="solar-roof.jpg"
-        leftBtnText="Oreder Now"
+        leftBtnText="Order Now"
         rightBtnText="Learn More"
+      />
+      <Section
+        title="Accessories"
+        backgroundImg="accessories.jpg"
+        leftBtnText="Shop Now"
       />
     </Container>
   );

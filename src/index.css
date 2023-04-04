@@ -1,10 +1,15 @@
 * {
   box-sizing: border-box;
-  font-family: "Gotham SSm", sans-serif;
+  font-family: "GothamSSm", sans-serif;
   /* color: #393c41; */
   color: #1a1b1d;
   margin: 0;
   padding: 0;
+}
+
+@font-face {
+  font-family: "GothamSSm";
+  src: url(./assets/GothamSSm-Book_Web.woff2);
 }
 
 body {

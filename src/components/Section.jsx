@@ -17,7 +17,7 @@ const Section = ({
       <Buttons>
         <ButtonGroup>
           <LeftButton>{leftBtnText}</LeftButton>
-          <RightButton>{rightBtnText}</RightButton>
+          {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
         </ButtonGroup>
         <DownArrow src="/images/down-arrow.svg" />
       </Buttons>
@@ -33,7 +33,6 @@ const Wrap = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no repeat;
-  // background-image: url("/images/model-3.jpg");
   display: flex;
   flex-direction: column;
   justify-content: space-between; // vertical
@@ -45,7 +44,7 @@ const Wrap = styled.div`
 const ItemText = styled.div`
   padding-top: 15vh;
   text-align: center;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
 `;
 
 const Buttons = styled.div`
@@ -80,7 +79,7 @@ const LeftButton = styled.div`
   font-size: 1rem;
   cursor: pointer;
   @media (min-width: 37.5em) {
-    width: 250px;
+    width: 300px;
   }
 `;
 

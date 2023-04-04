@@ -72,10 +72,11 @@ const RightMenu = styled.div`
 
 const MenuButton = styled.div`
   font-weight: 600;
-  font-size: 13px;
+  // font-size: 13px;
   display; flex;
-  background-color: #c0c2c7;
-  opacity: 0.85;
+  background-color: rgba(255, 255,255, 0.1);
+  backdrop-filter: blur(10px)
+  // opacity: 0.85;
   color: #1a1b1d;
   padding: 6px 12px;
   border-radius: 5px;

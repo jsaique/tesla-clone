@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { AiOutlineClose } from "react-icons/ai";
 
 function Header() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <Container>
       <a href="">
-        <img src="/images/logo.svg" alt="logo" />
+        <img src="/images/logo.svg" alt="Tesla logo" />
       </a>
       <LeftMenu>
         <a href="">Model 3</a>
@@ -21,7 +24,75 @@ function Header() {
         <a href="">Account</a>
         <a href="">Menu</a>
       </RightMenu>
-      <MenuButton>Menu</MenuButton>
+      <MenuButton onClick={() => setIsOpen(true)}>Menu</MenuButton>
+      <NavMenu show={isOpen}>
+        <CloseWrapper>
+          <CloseBtn onClick={() => setIsOpen(false)}></CloseBtn>
+        </CloseWrapper>
+        <li>
+          <a href="">Model S</a>
+        </li>
+        <li>
+          <a href="">Model 3</a>
+        </li>
+        <li>
+          <a href="">Model X</a>
+        </li>
+        <li>
+          <a href="">Model Y</a>
+        </li>
+        <li>
+          <a href="">Solar Roof</a>
+        </li>
+        <li>
+          <a href="">Solar Panels</a>
+        </li>
+        <li>
+          <a href="">Powerwall</a>
+        </li>
+        <li>
+          <a href="">Existing Inventory</a>
+        </li>
+        <li>
+          <a href="">Used Inventory</a>
+        </li>
+        <li>
+          <a href="">Trade In</a>
+        </li>
+        <li>
+          <a href="">Demo Drive</a>
+        </li>
+        <li>
+          <a href="">Insurance</a>
+        </li>
+        <li>
+          <a href="">Commercial Energy</a>
+        </li>
+        <li>
+          <a href="">Utilities</a>
+        </li>
+        <li>
+          <a href="">Charging</a>
+        </li>
+        <li>
+          <a href="">Find Us</a>
+        </li>
+        <li>
+          <a href="">Support</a>
+        </li>
+        <li>
+          <a href="">Investor Relations</a>
+        </li>
+        <li>
+          <a href="">Shop</a>
+        </li>
+        <li>
+          <a href="">Account</a>
+        </li>
+        <li>
+          <a href="">More</a>
+        </li>
+      </NavMenu>
     </Container>
   );
 }
@@ -38,6 +109,7 @@ const Container = styled.div`
   top: 0;
   left: 0;
   right: 0;
+  z-index: 1;
 `;
 
 const LeftMenu = styled.div`
@@ -72,15 +144,44 @@ const RightMenu = styled.div`
 
 const MenuButton = styled.div`
   font-weight: 600;
-  // font-size: 13px;
   display; flex;
   background-color: rgba(255, 255,255, 0.1);
   backdrop-filter: blur(10px)
-  // opacity: 0.85;
   color: #1a1b1d;
   padding: 6px 12px;
   border-radius: 5px;
+  cursor: pointer;
   @media (min-width: 83.5em) {
     display: none;
 }
+`;
+
+const NavMenu = styled.div`
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background: #fff;
+  width: 325px;
+  z-index: 100;
+  list-style: none;
+  padding: 20px;
+  text-align: start;
+  transform: ${(props) => (props.show ? "translateX(0)" : "translateX(100%)")};
+  transition: transform 0.2s ease-in-out;
+  li {
+    padding: 15px;
+    a {
+      font-weight: 600;
+    }
+  }
+`;
+
+const CloseWrapper = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
+
+const CloseBtn = styled(AiOutlineClose)`
+  cursor: pointer;
 `;

@@ -1,24 +1,30 @@
 import React from "react";
 import styled from "styled-components";
+import Fade from "react-reveal/Fade";
 
 const Section = ({
   title,
   description,
   backgroundImg,
+  backgroundImgLg,
   leftBtnText,
   rightBtnText,
 }) => {
   return (
-    <Wrap bgImage={backgroundImg}>
-      <ItemText>
-        <h1>{title}</h1>
-        <p>{description}</p>
-      </ItemText>
+    <Wrap bgImage={backgroundImg} bgImageLg={backgroundImgLg}>
+      <Fade big>
+        <ItemText>
+          <h1>{title}</h1>
+          <p>{description}</p>
+        </ItemText>
+      </Fade>
       <Buttons>
-        <ButtonGroup>
-          <LeftButton>{leftBtnText}</LeftButton>
-          {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
-        </ButtonGroup>
+        <Fade big>
+          <ButtonGroup>
+            <LeftButton>{leftBtnText}</LeftButton>
+            {rightBtnText && <RightButton>{rightBtnText}</RightButton>}
+          </ButtonGroup>
+        </Fade>
         <DownArrow src="/images/down-arrow.svg" />
       </Buttons>
     </Wrap>
@@ -39,6 +45,9 @@ const Wrap = styled.div`
   align-items: center; // horizontal
   line-height: 1.5;
   background-image: ${(props) => `url("/images/${props.bgImage}")`};
+  @media (min-width: 37.5em) {
+    background-image: ${(props) => `url("/images/${props.bgImageLg}")`};
+  }
 `;
 
 const ItemText = styled.div`
@@ -48,16 +57,16 @@ const ItemText = styled.div`
 `;
 
 const Buttons = styled.div`
-  margin-bottom: 10px;
+  margin-big: 10px;
   @media (max-width: 37.5em) {
-    margin-bottom: 30px;
+    margin-big: 30px;
   } ;
 `;
 
 const ButtonGroup = styled.div`
   display: flex;
   flex-direction: column;
-  margin-bottom: 15px;
+  margin-big: 15px;
   gap: 20px;
   @media (min-width: 37.5em) {
     flex-direction: row;

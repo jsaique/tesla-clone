@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { AiOutlineClose } from "react-icons/ai";
+// import { selectCars } from "../features/car/carSlice";
+// import { useSelector } from "react-redux";
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  // const cars = useSelector(selectCars);
+  // console.log(cars);
 
   return (
     <Container>
